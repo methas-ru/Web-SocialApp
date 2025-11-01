@@ -8,9 +8,8 @@ import { Card } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ActivityCard } from "@/components/ActivityCard";
 import { BottomNav } from "@/components/BottomNav";
-import { useToast } from "@/hooks/use-toast";
+import { useToast } from "@/hooks/use-toast.js";
 import { AuthGuard } from "@/components/AuthGuard";
-import { Camera, Edit3 } from "lucide-react";
 
 export default function Profile() {
   const [profile, setProfile] = useState(null);
@@ -202,24 +201,21 @@ export default function Profile() {
                     <div className="text-center">
                       {/* Profile Picture */}
                       <div className="relative inline-block mb-4">
-                      <Avatar className="h-12 w-12">
-                        <AvatarImage
-                          src={profile.profileImage}
-                          alt={profile.name || profile.username}
-                          className="h-full w-full object-cover rounded-full"
-                        />
-                        <AvatarFallback className="text-lg">
-                          {getInitials(profile.name || profile.username)}
-                        </AvatarFallback>
-                      </Avatar>
-                        
-                        {/* Upload Button */}
                         <label
                           htmlFor="profile-upload"
-                          className="absolute bottom-0 right-0 bg-blue-500 hover:bg-blue-600 text-white rounded-full p-2 cursor-pointer transition-colors shadow-lg"
-                          title="Change profile picture"
+                          className="cursor-pointer"
+                          title="Click to change profile picture"
                         >
-                          <Camera className="h-4 w-4" />
+                          <Avatar className="h-12 w-12">
+                            <AvatarImage
+                              src={profile.profileImage}
+                              alt={profile.name || profile.username}
+                              className="h-full w-full object-cover rounded-full"
+                            />
+                            <AvatarFallback className="text-lg">
+                              {getInitials(profile.name || profile.username)}
+                            </AvatarFallback>
+                          </Avatar>
                         </label>
                         <input
                           type="file"

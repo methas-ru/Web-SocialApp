@@ -19,7 +19,7 @@ import { Separator } from "@/components/ui/separator";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { useToast } from "@/hooks/use-toast";
+import { useToast } from "@/hooks/use-toast.js";
 import { AuthGuard } from "@/components/AuthGuard";
 import { ArrowLeft, Users, Edit, Trash2, Save, X } from "lucide-react";
 import {
